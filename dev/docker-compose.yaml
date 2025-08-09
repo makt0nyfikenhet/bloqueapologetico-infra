@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:16
+    container_name: pg-bloqueapologetico
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: bloqueapologetico
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # api:
+  #   image: bloqueapologetico-api:latest
+  #   platform: linux/amd64
+  #   ports:
+  #     - "${API_PORT}:${API_PORT}"
+  #   environment:
+  #     - PORT=${API_PORT}
+  #     - JWT_SECRET=${API_JWT_SECRET}
+  #     - DATABASE_URL=${DATABASE_URL}
+  #     - RPC_URL=${RPC_URL}
+  #     - TOKEN_CONTRACT_ADDRESS=${TOKEN_CONTRACT_ADDRESS}
+  #     - COURSE_CONTRACT_ADDRESS=${COURSE_CONTRACT_ADDRESS}
+  #   depends_on:
+  #     - db
+
+  redis:
+    image: redis:7
+    platform: linux/amd64
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./volumes/redis:/data
+
+volumes:
+  pgdata:

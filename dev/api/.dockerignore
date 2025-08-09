@@ -1,0 +1,44 @@
+# Git
+.git
+.gitignore
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment files (you might want to handle these differently)
+.env
+.env.*
+!.env.example
+
+# Build output
+bin/
+dist/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Test files
+*_test.go
+
+# Log files
+*.log
+
+# Local development files
+.dockerignore
+Dockerfile*
+docker-compose*
+
+# Go specific
+vendor/
+*.test
+*.out
+coverage.txt
