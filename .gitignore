@@ -1,0 +1,9 @@
+# Local development configuration
+/dev/.env
+
+# Hardhat runtime output
+/dev/onchain/*.log
+/dev/onchain/*.pid
+
+# Redis runtime data
+/dev/volumes/redis/
